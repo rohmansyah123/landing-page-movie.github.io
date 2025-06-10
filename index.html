@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieKu - Film Terbaru</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar"></nav>
+    </header>
+
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Temukan Film Favorit Anda</h1>
+                <p>Jelajahi ribuan film terbaru dan klasik.</p>
+                <form class="search-form">
+                    <input type="text" id="search-input" placeholder="Cari film...">
+                    <button type="submit">Cari</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="movies-section">
+            <h2>Film Populer</h2>
+            <div id="movie-list" class="movie-grid">
+                </div>
+            <div id="pagination-controls" class="pagination-controls">
+                </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2023 MovieKu. All rights reserved.</p>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/components/movieCard.js"></script>
+    <script src="js/components/navigation.js"></script>
+    <script src="js/components/pagination.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
