@@ -1,1 +1,368 @@
+/* General Styles */
+:root {
+    --primary-color: #e50914; /* Netflix Red */
+    --secondary-color: #221f1f; /* Dark background */
+    --text-color: #f5f5f1; /* Light text */
+    --dark-grey: #1a1a1a;
+    --light-grey: #aaaaaa;
+}
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
+.header {
+    background-color: var(--dark-grey);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/hero-bg.jpg') no-repeat center center/cover;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Optional: Add a placeholder image in assets/hero-bg.jpg for the hero section background */
+/* For example, a blurred high-resolution movie still */
+/* If you don't have one, just use a solid color background */
+
+.hero-content {
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.search-form input[type="text"] {
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 60%;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+}
+
+.search-form input[type="text"]::placeholder {
+    color: var(--light-grey);
+}
+
+.search-form button {
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+    background-color: #c00c10;
+}
+
+/* Movies Section */
+.movies-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.movies-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.movie-card {
+    background-color: var(--dark-grey);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+.movie-card-poster {
+    width: 100%;
+    height: 300px; /* Fixed height for consistent cards */
+    object-fit: cover;
+    display: block;
+    background-color: #333; /* Placeholder background */
+}
+
+/* Lazy Load Placeholder */
+.movie-card-poster.lazy-load {
+    background-image: url('../assets/placeholder.jpg'); /* Optional: a generic placeholder image */
+    background-size: cover;
+    background-position: center;
+}
+/* If you don't have a placeholder image, remove the background-image and just use background-color */
+
+
+.movie-card-info {
+    padding: 1rem;
+    flex-grow: 1; /* Allows info to take available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.movie-card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.movie-card-release-date {
+    font-size: 0.9rem;
+    color: var(--light-grey);
+    margin-bottom: 0.5rem;
+}
+
+.movie-card-rating {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffd700; /* Gold for rating */
+    margin-top: auto; /* Pushes rating to the bottom */
+}
+
+/* Pagination Controls */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.pagination-button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination-button:hover {
+    background-color: #c00c10;
+}
+
+.pagination-button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+.current-page {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark-grey);
+    padding: 1.5rem 0;
+    text-align: center;
+    color: var(--light-grey);
+    margin-top: 3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+    }
+
+    .nav-links li {
+        margin: 0 0.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .search-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-form input[type="text"] {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    .movie-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .movie-card-poster {
+        height: 220px;
+    }
+
+    .movie-card-title {
+        font-size: 1rem;
+    }
+
+    .movie-card-release-date,
+    .movie-card-rating {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.5rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links li {
+        margin: 0.3rem;
+    }
+
+    .hero-section {
+        height: 400px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .search-form input[type="text"] {
+        width: 90%;
+    }
+
+    .movies-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .movie-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .movie-card-poster {
+        height: 180px;
+    }
+
+    .movie-card-title {
+        font-size: 0.9rem;
+    }
+  }
+      
